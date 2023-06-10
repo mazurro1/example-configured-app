@@ -67,6 +67,7 @@
     "@total-typescript/ts-reset": "^0.4.2",
     "@types/css.escape": "^1.5.0",
     "@types/jest": "^29.5.2",
+    "@types/next-pwa": "^5.6.4",
     "@types/node": "^20.2.6",
     "@types/react": "^18.2.10",
     "@types/react-collapse": "^5.0.1",

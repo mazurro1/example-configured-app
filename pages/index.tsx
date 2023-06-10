@@ -1,21 +1,10 @@
-import { usePageColorMode } from "@hooks/usePageColorMode";
-import { useTranslation } from "@hooks/useTranslations";
 import { GetStaticProps } from "next";
 import { getTranslationsProps } from "next-translations";
 
+import HomePage from "@/components/HomePage";
+
 export default function Home() {
-  const { handleChangePageColorMode, darkMode } = usePageColorMode();
-
-  const { tString } = useTranslation("common");
-
-  return (
-    <main>
-      <div>{tString("example")}</div>
-      <button onClick={handleChangePageColorMode}>
-        is dark mode: {darkMode.toString()}
-      </button>
-    </main>
-  );
+  return <HomePage />;
 }
 
 export const getStaticProps: GetStaticProps = async ctx => {
