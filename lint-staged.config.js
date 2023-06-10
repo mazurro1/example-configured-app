@@ -8,6 +8,7 @@ module.exports = {
     `npm run format --write `,
     // "npm run test:ci",
     "npm run check-cspell",
+    "npm run build",
   ],
 
   // Format MarkDown and JSON
