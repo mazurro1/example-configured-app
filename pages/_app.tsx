@@ -4,6 +4,7 @@ import { AppProps } from "next/app";
 import { initializeTranslations } from "next-translations/hooks";
 
 import Layout from "@/components/Layout";
+import Alerts from "@/lib/alertsWrapper";
 import ContextWrapper from "@/lib/contextWrapper";
 
 const App = ({ Component, pageProps }: AppProps) => {
@@ -14,7 +15,9 @@ const App = ({ Component, pageProps }: AppProps) => {
       <QueryWrapper>
         <StyledThemeWrapper>
           <Layout>
-            <Component {...pageProps} />
+            <Alerts>
+              <Component {...pageProps} />
+            </Alerts>
           </Layout>
         </StyledThemeWrapper>
       </QueryWrapper>

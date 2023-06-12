@@ -2,3 +2,4 @@ nextjs
 tanstack
 callout
 vercel
+toastify
