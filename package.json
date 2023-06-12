@@ -41,7 +41,7 @@
     "next-build-id": "^3.0.0",
     "next-images": "^1.8.5",
     "next-pwa": "^5.6.0",
-    "next-translations": "^8.1.5",
+    "next-translations": "^8.1.6",
     "react": "18.2.0",
     "react-collapse": "^5.1.1",
     "react-dom": "18.2.0",
