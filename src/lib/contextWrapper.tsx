@@ -1,8 +1,14 @@
 import ColorModeContextProvider from "@context/ColorModeContext";
-import { PropsWithChildren } from "react";
+import type { PropsWithChildren } from "react";
+
+import LayoutContextProvider from "@/context/LayoutContext";
 
 const ContextWrapper = ({ children }: PropsWithChildren) => {
-  return <ColorModeContextProvider>{children}</ColorModeContextProvider>;
+  return (
+    <LayoutContextProvider>
+      <ColorModeContextProvider>{children}</ColorModeContextProvider>
+    </LayoutContextProvider>
+  );
 };
 
 export default ContextWrapper;
