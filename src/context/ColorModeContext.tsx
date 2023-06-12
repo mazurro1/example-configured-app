@@ -1,11 +1,11 @@
 import { createContext, PropsWithChildren, useState } from "react";
 
-type TColorModeContext = {
+type T_ColorModeContext = {
   darkMode: boolean;
   handleChangePageColorMode: () => void;
 };
 
-export const ColorModeContext = createContext<TColorModeContext>({
+export const ColorModeContext = createContext<T_ColorModeContext>({
   darkMode: false,
   handleChangePageColorMode: () => {},
 });
@@ -17,7 +17,7 @@ const ColorModeContextProvider = ({ children }: PropsWithChildren) => {
     setDarkMode(prevState => !prevState);
   };
 
-  const contextValues: TColorModeContext = {
+  const contextValues: T_ColorModeContext = {
     darkMode: darkMode,
     handleChangePageColorMode: handleChangePageColorMode,
   };

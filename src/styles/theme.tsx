@@ -1,9 +1,9 @@
-import { DARK_COLORS, LIGHT_COLORS, TAllColors } from "@constants/colors";
+import { DARK_COLORS, LIGHT_COLORS, T_AllColors } from "@constants/colors";
 import { mobileSize, tabletSize } from "@constants/layout";
 import type { DefaultTheme } from "styled-components";
-export type { TColors } from "@constants/colors";
+export type { T_Colors } from "@constants/colors";
 
-export type TSpacings =
+export type T_Spacings =
   | 0
   | 1
   | 2
@@ -32,7 +32,7 @@ export type TSpacings =
   | 65
   | 70
   | 100;
-export type TFontSize =
+export type T_FontSize =
   | 10
   | 12
   | 14
@@ -45,21 +45,21 @@ export type TFontSize =
   | 30
   | 36
   | 48;
-export type TFontWeight = "thin" | "normal" | "semiBold" | "bold";
-export type TFontAlign = "center" | "left" | "right";
+export type T_FontWeight = "thin" | "normal" | "semiBold" | "bold";
+export type T_FontAlign = "center" | "left" | "right";
 
-export type TMedia =
+export type T_Media =
   | "isMobile"
   | "isTabletOrMobile"
   | "isTablet"
   | "isDesktopOrTablet"
   | "isDesktop";
 
-export type TBorderRadius = 0 | 5 | 8 | 12 | 20 | 24;
+export type T_BorderRadius = 0 | 5 | 8 | 12 | 20 | 24;
 
 declare module "styled-components" {
   export interface DefaultTheme {
-    colors: TAllColors;
+    colors: T_AllColors;
     fontSize: {
       10: string;
       12: string;
@@ -128,11 +128,11 @@ declare module "styled-components" {
   }
 }
 
-type TMyTheme = {
+type T_MyTheme = {
   darkMode?: boolean;
 };
 
-export const myTheme = ({ darkMode }: TMyTheme) => {
+export const myTheme = ({ darkMode }: T_MyTheme) => {
   const theme: DefaultTheme = {
     colors: darkMode ? DARK_COLORS : LIGHT_COLORS,
     fontSize: {

@@ -1,6 +1,6 @@
 import { defaultLocale, locales } from "../../translations.config";
 
-export type ILanguagesType = "en";
+export type T_Languages = "en";
 
-export const defaultLanguage: ILanguagesType = defaultLocale as ILanguagesType;
-export const allLanguages: ILanguagesType[] = locales as ILanguagesType[];
+export const defaultLanguage: T_Languages = defaultLocale as T_Languages;
+export const allLanguages: T_Languages[] = locales as T_Languages[];

@@ -6,7 +6,7 @@ module.exports = {
   "**/*.(ts|tsx|js)": () => [
     `npm run lint:write --fix`,
     `npm run format --write `,
-    // "npm run test:ci",
+    "npm run test:ci",
     "npm run check-cspell",
     "npm run build",
   ],
