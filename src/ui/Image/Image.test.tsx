@@ -6,7 +6,14 @@ import Image from "./Image";
 
 describe("Image", () => {
   it("valid Image src", () => {
-    render(<Image alt="example-image" src="" />);
+    render(
+      <Image
+        alt="example-image"
+        onAll={{
+          src: "",
+        }}
+      />,
+    );
 
     const image = screen.queryByRole("img", {
       name: "example-image",
@@ -16,7 +23,14 @@ describe("Image", () => {
   });
 
   it("show Image", () => {
-    render(<Image alt="example-image" src={svgImage} />);
+    render(
+      <Image
+        alt="example-image"
+        onAll={{
+          src: svgImage,
+        }}
+      />,
+    );
 
     const image = screen.getByRole("img", {
       name: "example-image",

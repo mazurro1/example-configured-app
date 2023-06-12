@@ -27,7 +27,12 @@ const HomePage = () => {
       >
         add alert
       </button>
-      <Image src={svgImage} alt="xxx" />
+      <Image
+        onAll={{
+          src: svgImage,
+        }}
+        alt="xxx"
+      />
     </section>
   );
 };
