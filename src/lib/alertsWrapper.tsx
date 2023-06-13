@@ -4,11 +4,11 @@ import { queryClient } from "@constants/queryClient";
 import { useTranslation } from "@hooks/useTranslations";
 import type { AxiosError } from "axios";
 import type { PropsWithChildren } from "react";
-import { ToastContainer } from "react-toastify";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
+
+import { usePageColorMode } from "@/hooks/usePageColorMode";
 
 // import styled from "styled-components";
-import { usePageColorMode } from "@/hooks/usePageColorMode";
 // const StyledContainer = styled(ToastContainer)`
 //   &&&.Toastify__toast-container {
 //   }
@@ -17,6 +17,23 @@ import { usePageColorMode } from "@/hooks/usePageColorMode";
 //   .Toastify__toast-body {
 //   }
 //   .Toastify__progress-bar {
+//     background: red;
+//   }
+//   .Toastify__toast--default {
+//     background: #fff;
+//     color: #aaa;
+//   }
+//   .Toastify__toast--info {
+//     background: #3498db;
+//   }
+//   .Toastify__toast--success {
+//     background: #07bc0c;
+//   }
+//   .Toastify__toast--warning {
+//     background: #f1c40f;
+//   }
+//   .Toastify__toast--error {
+//     background: #e74c3c;
 //   }
 // `;
 
