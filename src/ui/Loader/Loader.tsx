@@ -6,7 +6,7 @@ import { LoaderStyled } from "./Loader.style";
 const Loader = () => {
   const { isLoaderActive } = useLoader();
   return (
-    <Popup isOpen={isLoaderActive} inWindow={false} isLoader>
+    <Popup isOpen={isLoaderActive} isLoader>
       <LoaderStyled>
         <div></div>
         <div></div>

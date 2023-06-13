@@ -3,6 +3,7 @@ import { useTranslation } from "@hooks/useTranslations";
 import svgImage from "@images/next.svg";
 
 import { useAlerts } from "@/hooks/useAlerts";
+import { useLoader } from "@/hooks/useLoader";
 import Image from "@/ui/Image";
 
 const HomePage = () => {
@@ -10,6 +11,14 @@ const HomePage = () => {
   const { handleAddAlert } = useAlerts();
 
   const { tString } = useTranslation("common");
+  const { handleChangeLoading } = useLoader();
+
+  const handleLoader = () => {
+    handleChangeLoading(true);
+    setTimeout(() => {
+      handleChangeLoading(false);
+    }, 2000);
+  };
 
   return (
     <section>
@@ -27,6 +36,7 @@ const HomePage = () => {
       >
         add alert
       </button>
+      <button onClick={handleLoader}>loader</button>
 
       <Image
         onAll={{
