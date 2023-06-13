@@ -12,7 +12,7 @@ module.exports = {
   redirectForLoggedUser: routes.homePage,
   redirectForNotLoggedUser: routes.loginPage,
   outputFolderTranslations: "/public/locales",
-  constNamespaces: ["common"],
+  constNamespaces: ["common", "errors"],
   componentNameToReplaced: "TComponent",
   routes,
 };

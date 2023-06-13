@@ -11,8 +11,8 @@ const App = ({ Component, pageProps }: AppProps) => {
   initializeTranslations(pageProps?.translations);
 
   return (
-    <ContextWrapper>
-      <QueryWrapper>
+    <QueryWrapper>
+      <ContextWrapper>
         <StyledThemeWrapper>
           <Layout>
             <Alerts>
@@ -20,8 +20,8 @@ const App = ({ Component, pageProps }: AppProps) => {
             </Alerts>
           </Layout>
         </StyledThemeWrapper>
-      </QueryWrapper>
-    </ContextWrapper>
+      </ContextWrapper>
+    </QueryWrapper>
   );
 };
 

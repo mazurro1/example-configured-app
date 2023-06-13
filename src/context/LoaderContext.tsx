@@ -38,6 +38,8 @@ const LoaderContextProvider = ({ children }: PropsWithChildren) => {
     const isLoaderActiveForReactQuery = isFetching || isMutating ? true : false;
     if (isLoaderActiveForReactQuery) {
       handleChangeLoading(isLoaderActiveForReactQuery);
+    } else {
+      handleChangeLoading(false);
     }
   }, [isFetching, isMutating]);
 

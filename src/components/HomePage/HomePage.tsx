@@ -27,6 +27,7 @@ const HomePage = () => {
       >
         add alert
       </button>
+
       <Image
         onAll={{
           src: svgImage,

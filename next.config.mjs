@@ -21,24 +21,11 @@ const withPWA = nextPWA({
 /**
  * @type {import('next').NextConfig}
  */
-const config = withImages(
-  withPWA(
-    withPlugins([[withBundleAnalyzer({ enabled: false })]], {
-      //img props
-      fileExtensions: [
-        "jpg",
-        "jpeg",
-        "png",
-        "svg",
-        "gif",
-        "ico",
-        "webp",
-        "jp2",
-        "avif",
-      ],
-      name: "[name].[hash:base64:8].[ext]",
 
-      //other props
+const config = withPlugins(
+  [[withBundleAnalyzer({ enabled: false })]],
+  withPWA(
+    withImages({
       compiler: {
         styledComponents: true,
       },
@@ -48,9 +35,6 @@ const config = withImages(
       reactStrictMode: true,
       experimental: { instrumentationHook: true },
       output: "export",
-      rewrites() {
-        return [{ source: "/healthz", destination: "/api/health" }];
-      },
       generateBuildId: async () => {
         const fromGit = await nextBuildId({ dir: __dirname });
         return fromGit;
