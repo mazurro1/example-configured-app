@@ -1,5 +1,6 @@
 import QueryWrapper from "@lib/queryClientWrapper";
 import StyledThemeWrapper from "@lib/styledThemeWrapper";
+import { Hydrate } from "@tanstack/react-query";
 import { AppProps } from "next/app";
 import { initializeTranslations } from "next-translations/hooks";
 
@@ -12,15 +13,17 @@ const App = ({ Component, pageProps }: AppProps) => {
 
   return (
     <QueryWrapper>
-      <ContextWrapper>
-        <StyledThemeWrapper>
-          <Layout>
-            <Alerts>
-              <Component {...pageProps} />
-            </Alerts>
-          </Layout>
-        </StyledThemeWrapper>
-      </ContextWrapper>
+      <Hydrate state={pageProps.dehydratedState}>
+        <ContextWrapper>
+          <StyledThemeWrapper>
+            <Layout>
+              <Alerts>
+                <Component {...pageProps} />
+              </Alerts>
+            </Layout>
+          </StyledThemeWrapper>
+        </ContextWrapper>
+      </Hydrate>
     </QueryWrapper>
   );
 };
