@@ -22,7 +22,7 @@ export const GlobalStyle = createGlobalStyle`
 
   content: '${({ theme }) => CSS(theme.defaultValue)}';
 
-  h1, h2, h3, h4, h5, h6, p, span, b, strong, ul, li, ol, button, div, section {
+  * {
     transition-property: background-color, color, padding, transform;
     transition-duration: 0.1s;
     transition-timing-function: ease;
