@@ -1,9 +1,8 @@
-import { motion } from "framer-motion";
 import styled from "styled-components";
 
 import { minWidthWindow } from "@/constants/layout";
 
-export const PopupWindowStyled = styled(motion.div)<{ $isLoader?: boolean }>`
+export const PopupWindowStyled = styled.div<{ $isLoader?: boolean }>`
   position: fixed;
   ${props => (props.$isLoader ? `z-index: 1000;` : `z-index: 100;`)};
   top: 0;
@@ -17,7 +16,7 @@ export const PopupWindowStyled = styled(motion.div)<{ $isLoader?: boolean }>`
   backdrop-filter: blur(2px);
 `;
 
-export const PopupWindowContainerStyled = styled(motion.div)<{
+export const PopupWindowContainerStyled = styled.div<{
   $fullScreen?: boolean;
 }>`
   ${props =>

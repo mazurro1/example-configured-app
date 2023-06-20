@@ -1,38 +1,55 @@
-import {
-  defaultsTransitions,
-  preparedAnimations,
-  T_PreparedAnimations,
-} from "@constants/preparedAnimations";
-import { AnimationProps as AnimationMotionProps, motion } from "framer-motion";
+import { domAnimation, LazyMotion, m } from "framer-motion";
 import { memo, PropsWithChildren } from "react";
 
-interface AnimationProps {
-  key: string;
-  transition?: AnimationMotionProps["transition"] | "fast" | "medium" | "slow";
-  animName?: string;
-}
+import {
+  getAnimation,
+  getTransition,
+  T_Animations,
+  T_Transition,
+} from "@/constants/animations";
+
+type T_Animation = {
+  id: string;
+  transition?: T_Transition;
+  animation?: T_Animations;
+  showOnScroll?: boolean;
+  showOnScrollOnce?: boolean;
+  animationValue?: number;
+  delay?: number;
+};
 
 const Animation = ({
   children,
-  key,
-  animName = "fadeInOutDown",
+  id,
+  animation = "fade",
   transition = "medium",
-}: PropsWithChildren<AnimationProps>) => {
+  showOnScroll = false,
+  showOnScrollOnce = false,
+  animationValue = 100,
+  delay = 0,
+}: PropsWithChildren<T_Animation>) => {
+  const selectAnimation = getAnimation({
+    animation: animation,
+    showOnScroll: showOnScroll,
+    animationValue: animationValue,
+  });
+
+  const selectTransition = getTransition({
+    transition: transition,
+    delay: delay / 1000,
+  });
+
   return (
-    <motion.div
-      variants={preparedAnimations[animName as keyof T_PreparedAnimations]}
-      initial={"initial"}
-      animate={"animate"}
-      exit={"exit"}
-      key={key}
-      transition={
-        typeof transition === "string"
-          ? defaultsTransitions[transition]
-          : transition
-      }
-    >
-      {children}
-    </motion.div>
+    <LazyMotion features={domAnimation}>
+      <m.div
+        {...selectAnimation}
+        key={id}
+        transition={selectTransition}
+        viewport={{ once: showOnScrollOnce }}
+      >
+        {children}
+      </m.div>
+    </LazyMotion>
   );
 };
 

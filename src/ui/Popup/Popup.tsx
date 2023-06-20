@@ -1,7 +1,9 @@
 import type { T_BorderRadius, T_Colors } from "@styles/theme";
-import AnimationContainer from "@ui/AnimationContainer";
+import Animation from "@ui/Animation";
 import Background from "@ui/Background";
 import { memo, PropsWithChildren, useEffect } from "react";
+
+import AnimationContainer from "@/ui/AnimationContainer";
 
 import {
   PopupWindowContainerStyled,
@@ -42,60 +44,33 @@ const Popup = ({
   const content = !inWindow ? (
     children
   ) : (
-    <PopupWindowContainerStyled
-      id={id}
-      $fullScreen={fullScreen}
-      key="modal"
-      initial={
-        inWindow
-          ? { transform: "translateY(500px) scale(0)", opacity: 0 }
-          : { opacity: 0 }
-      }
-      animate={
-        inWindow
-          ? {
-              transform: "translateY(0px) scale(1)",
-              opacity: 1,
-              transition: { duration: 0.3 },
-            }
-          : { opacity: 1, transition: { duration: 0.2 } }
-      }
-      exit={
-        inWindow
-          ? {
-              transform: "translateY(500px) scale(0)",
-              opacity: 0,
-              transition: { duration: 0.3 },
-            }
-          : { opacity: 0, transition: { duration: 0.2 } }
-      }
+    <Animation
+      id={id + "_container"}
+      animation="fadeDownScale"
+      animationValue={500}
     >
-      <Background color={color} borderRadius={borderRadius}>
-        <WindowHeightStyled
-          maxWidth={maxWidth}
-          minHeight={minHeight}
-          width={width}
-        >
-          {children}
-        </WindowHeightStyled>
-      </Background>
-    </PopupWindowContainerStyled>
+      <PopupWindowContainerStyled id={id} $fullScreen={fullScreen}>
+        <Background color={color} borderRadius={borderRadius}>
+          <WindowHeightStyled
+            maxWidth={maxWidth}
+            minHeight={minHeight}
+            width={width}
+          >
+            {children}
+          </WindowHeightStyled>
+        </Background>
+      </PopupWindowContainerStyled>
+    </Animation>
   );
 
   return (
-    <>
-      <AnimationContainer enabled={isOpen}>
-        <PopupWindowStyled
-          id="popup"
-          $isLoader={isLoader}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, transition: { duration: 0.2 } }}
-          exit={{ opacity: 0, transition: { duration: 0.2 } }}
-        >
+    <AnimationContainer enabled={isOpen}>
+      <Animation id={id + "_window"} animation="fade">
+        <PopupWindowStyled id="popup" $isLoader={isLoader}>
           {content}
         </PopupWindowStyled>
-      </AnimationContainer>
-    </>
+      </Animation>
+    </AnimationContainer>
   );
 };
 export default memo(Popup);

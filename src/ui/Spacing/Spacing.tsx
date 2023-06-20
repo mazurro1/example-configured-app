@@ -43,17 +43,17 @@ const Spacing = ({
       {onMobile && (
         <MediaQuery media="isMobile">
           <SpacingStyled
-            margin={onMobile?.margin}
-            marginTop={onMobile?.marginTop}
-            marginBottom={onMobile?.marginBottom}
-            marginLeft={onMobile?.marginLeft}
-            marginRight={onMobile?.marginRight}
-            padding={onMobile?.padding}
-            paddingTop={onMobile?.paddingTop}
-            paddingBottom={onMobile?.paddingBottom}
-            paddingLeft={onMobile?.paddingLeft}
-            paddingRight={onMobile?.paddingRight}
-            align={onMobile?.align}
+            $margin={onMobile?.margin}
+            $marginTop={onMobile?.marginTop}
+            $marginBottom={onMobile?.marginBottom}
+            $marginLeft={onMobile?.marginLeft}
+            $marginRight={onMobile?.marginRight}
+            $padding={onMobile?.padding}
+            $paddingTop={onMobile?.paddingTop}
+            $paddingBottom={onMobile?.paddingBottom}
+            $paddingLeft={onMobile?.paddingLeft}
+            $paddingRight={onMobile?.paddingRight}
+            $align={onMobile?.align}
             id={id}
           >
             {children}
@@ -63,17 +63,17 @@ const Spacing = ({
       {onTabletOrMobile && (
         <MediaQuery media="isTabletOrMobile">
           <SpacingStyled
-            margin={onTabletOrMobile?.margin}
-            marginTop={onTabletOrMobile?.marginTop}
-            marginBottom={onTabletOrMobile?.marginBottom}
-            marginLeft={onTabletOrMobile?.marginLeft}
-            marginRight={onTabletOrMobile?.marginRight}
-            padding={onTabletOrMobile?.padding}
-            paddingTop={onTabletOrMobile?.paddingTop}
-            paddingBottom={onTabletOrMobile?.paddingBottom}
-            paddingLeft={onTabletOrMobile?.paddingLeft}
-            paddingRight={onTabletOrMobile?.paddingRight}
-            align={onTabletOrMobile?.align}
+            $margin={onTabletOrMobile?.margin}
+            $marginTop={onTabletOrMobile?.marginTop}
+            $marginBottom={onTabletOrMobile?.marginBottom}
+            $marginLeft={onTabletOrMobile?.marginLeft}
+            $marginRight={onTabletOrMobile?.marginRight}
+            $padding={onTabletOrMobile?.padding}
+            $paddingTop={onTabletOrMobile?.paddingTop}
+            $paddingBottom={onTabletOrMobile?.paddingBottom}
+            $paddingLeft={onTabletOrMobile?.paddingLeft}
+            $paddingRight={onTabletOrMobile?.paddingRight}
+            $align={onTabletOrMobile?.align}
             id={id}
           >
             {children}
@@ -83,17 +83,17 @@ const Spacing = ({
       {onTablet && (
         <MediaQuery media="isTablet">
           <SpacingStyled
-            margin={onTablet?.margin}
-            marginTop={onTablet?.marginTop}
-            marginBottom={onTablet?.marginBottom}
-            marginLeft={onTablet?.marginLeft}
-            marginRight={onTablet?.marginRight}
-            padding={onTablet?.padding}
-            paddingTop={onTablet?.paddingTop}
-            paddingBottom={onTablet?.paddingBottom}
-            paddingLeft={onTablet?.paddingLeft}
-            paddingRight={onTablet?.paddingRight}
-            align={onTablet?.align}
+            $margin={onTablet?.margin}
+            $marginTop={onTablet?.marginTop}
+            $marginBottom={onTablet?.marginBottom}
+            $marginLeft={onTablet?.marginLeft}
+            $marginRight={onTablet?.marginRight}
+            $padding={onTablet?.padding}
+            $paddingTop={onTablet?.paddingTop}
+            $paddingBottom={onTablet?.paddingBottom}
+            $paddingLeft={onTablet?.paddingLeft}
+            $paddingRight={onTablet?.paddingRight}
+            $align={onTablet?.align}
             id={id}
           >
             {children}
@@ -103,17 +103,17 @@ const Spacing = ({
       {onDesktopOrTablet && (
         <MediaQuery media="isDesktopOrTablet">
           <SpacingStyled
-            margin={onDesktopOrTablet?.margin}
-            marginTop={onDesktopOrTablet?.marginTop}
-            marginBottom={onDesktopOrTablet?.marginBottom}
-            marginLeft={onDesktopOrTablet?.marginLeft}
-            marginRight={onDesktopOrTablet?.marginRight}
-            padding={onDesktopOrTablet?.padding}
-            paddingTop={onDesktopOrTablet?.paddingTop}
-            paddingBottom={onDesktopOrTablet?.paddingBottom}
-            paddingLeft={onDesktopOrTablet?.paddingLeft}
-            paddingRight={onDesktopOrTablet?.paddingRight}
-            align={onDesktopOrTablet?.align}
+            $margin={onDesktopOrTablet?.margin}
+            $marginTop={onDesktopOrTablet?.marginTop}
+            $marginBottom={onDesktopOrTablet?.marginBottom}
+            $marginLeft={onDesktopOrTablet?.marginLeft}
+            $marginRight={onDesktopOrTablet?.marginRight}
+            $padding={onDesktopOrTablet?.padding}
+            $paddingTop={onDesktopOrTablet?.paddingTop}
+            $paddingBottom={onDesktopOrTablet?.paddingBottom}
+            $paddingLeft={onDesktopOrTablet?.paddingLeft}
+            $paddingRight={onDesktopOrTablet?.paddingRight}
+            $align={onDesktopOrTablet?.align}
             id={id}
           >
             {children}
@@ -123,17 +123,17 @@ const Spacing = ({
       {onDesktop && (
         <MediaQuery media="isDesktop">
           <SpacingStyled
-            margin={onDesktop?.margin}
-            marginTop={onDesktop?.marginTop}
-            marginBottom={onDesktop?.marginBottom}
-            marginLeft={onDesktop?.marginLeft}
-            marginRight={onDesktop?.marginRight}
-            padding={onDesktop?.padding}
-            paddingTop={onDesktop?.paddingTop}
-            paddingBottom={onDesktop?.paddingBottom}
-            paddingLeft={onDesktop?.paddingLeft}
-            paddingRight={onDesktop?.paddingRight}
-            align={onDesktop?.align}
+            $margin={onDesktop?.margin}
+            $marginTop={onDesktop?.marginTop}
+            $marginBottom={onDesktop?.marginBottom}
+            $marginLeft={onDesktop?.marginLeft}
+            $marginRight={onDesktop?.marginRight}
+            $padding={onDesktop?.padding}
+            $paddingTop={onDesktop?.paddingTop}
+            $paddingBottom={onDesktop?.paddingBottom}
+            $paddingLeft={onDesktop?.paddingLeft}
+            $paddingRight={onDesktop?.paddingRight}
+            $align={onDesktop?.align}
             id={id}
           >
             {children}
@@ -142,17 +142,17 @@ const Spacing = ({
       )}
       {onAll && (
         <SpacingStyled
-          margin={onAll?.margin}
-          marginTop={onAll?.marginTop}
-          marginBottom={onAll?.marginBottom}
-          marginLeft={onAll?.marginLeft}
-          marginRight={onAll?.marginRight}
-          padding={onAll?.padding}
-          paddingTop={onAll?.paddingTop}
-          paddingBottom={onAll?.paddingBottom}
-          paddingLeft={onAll?.paddingLeft}
-          paddingRight={onAll?.paddingRight}
-          align={onAll?.align}
+          $margin={onAll?.margin}
+          $marginTop={onAll?.marginTop}
+          $marginBottom={onAll?.marginBottom}
+          $marginLeft={onAll?.marginLeft}
+          $marginRight={onAll?.marginRight}
+          $padding={onAll?.padding}
+          $paddingTop={onAll?.paddingTop}
+          $paddingBottom={onAll?.paddingBottom}
+          $paddingLeft={onAll?.paddingLeft}
+          $paddingRight={onAll?.paddingRight}
+          $align={onAll?.align}
           id={id}
         >
           {children}

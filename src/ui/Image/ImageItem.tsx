@@ -9,7 +9,10 @@ const ImageItem = ({
   alt,
   borderRadius,
   cursor,
-  ...restProps
+  height,
+  id,
+  onClick,
+  width,
 }: T_ImageItem & T_ImageItemProps) => {
   if (!src) {
     return null;
@@ -17,7 +20,14 @@ const ImageItem = ({
 
   return (
     <ImageStyled borderRadius={borderRadius} cursor={cursor}>
-      <img src={src} alt={alt} {...restProps} />
+      <img
+        src={src}
+        alt={alt}
+        height={height}
+        id={id}
+        onClick={onClick}
+        width={width}
+      />
     </ImageStyled>
   );
 };

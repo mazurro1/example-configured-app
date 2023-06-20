@@ -48,7 +48,13 @@ const Alerts = ({ children }: PropsWithChildren) => {
       message: string;
     }>;
 
-    toast.error(_err.response?.data.message ?? tString(_err.message));
+    console.warn(err);
+
+    toast.error(
+      _err.response?.data.message ?? _err.message
+        ? tString(_err.message)
+        : tString("somethingWentWrong"),
+    );
   };
 
   return (
