@@ -21,7 +21,9 @@ const LoaderContextProvider = ({ children }: PropsWithChildren) => {
       return;
     }
 
-    const timer = setTimeout(() => setIsLoaderActive(false), 500);
+    const timer = setTimeout(() => {
+      setIsLoaderActive(false);
+    }, 500);
     return () => {
       clearTimeout(timer);
     };

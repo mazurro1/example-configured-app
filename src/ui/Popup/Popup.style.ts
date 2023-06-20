@@ -9,11 +9,21 @@ export const PopupWindowStyled = styled.div<{ $isLoader?: boolean }>`
   right: 0;
   left: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
-  backdrop-filter: blur(2px);
+  animation: backdrop-filter-animation 2s ease forwards;
+
+  @keyframes backdrop-filter-animation {
+    from {
+      backdrop-filter: blur(0px);
+    }
+
+    to {
+      backdrop-filter: blur(3px);
+    }
+  }
 `;
 
 export const PopupWindowContainerStyled = styled.div<{
